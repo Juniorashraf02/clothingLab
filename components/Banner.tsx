@@ -3,10 +3,10 @@ const text = "Less Noise. More Style.";
 
 export default function Banner() {
     return (
-        <div className=" text-white p-4">
+        <div className=" text-white md:p-4 p-2">
             {/* <h1 className="md:text-6xl font-bold ">Less Noise. More Style.</h1> */}
 
-            <h1 className="md:text-6xl font-bold flex flex-wrap">
+            <h1 className="md:text-6xl text-6xl font-bold flex flex-wrap">
                 {text.split("").map((char, index) => (
                     <span
                         key={index}

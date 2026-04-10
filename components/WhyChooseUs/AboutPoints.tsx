@@ -37,7 +37,7 @@ export default function AboutPoints() {
   }, []);
 
   return (
-    <ul ref={ref} className="space-y-4 max-w-xl">
+    <ul ref={ref} className="space-y-4 max-w-xl px-1">
       {points.map((point, i) => (
         <li
           key={i}

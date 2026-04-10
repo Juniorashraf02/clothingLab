@@ -33,12 +33,14 @@ export default function Navbar() {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
 
-            {/* company name */}
+            {/* company name starts*/}
             <div className="flex shrink-0 items-center">
-              <span className="text-white font-black text-3xl tracking-tight leading-none">
+              <span className="text-white font-black md:text-3xl tracking-tight leading-none">
                 CLOTHING <span className="text-red-500">LAB</span>
               </span>
             </div>
+            {/* company name ends */}
+
 
 
             <div className="hidden sm:ml-6 sm:block">
@@ -49,7 +51,7 @@ export default function Navbar() {
                     href={item.href}
                     aria-current={item.current ? 'page' : undefined}
                     className={classNames(
-                      item.current ? 'bg-gray-950/50 text-white' : 'dark:text-[#9FCB98] text-red-700 text-bold hover:bg-white/5 hover:translate-x-2 duration-600',
+                      item.current ? 'bg-gray-950/50 text-white' : 'dark:text-[#9FCB98] text-red-700 text-bold hover:bg-white/5 hover:translate-x-2',
                       'rounded-md px-3 py-2 font-medium',
                     )}
                   >
@@ -62,13 +64,13 @@ export default function Navbar() {
 
 
 
-          <div className="absolute flex items-center pr-0 sm:static sm:inset-auto sm:ml-6 sm:pr-0 justtify-center px-1 ">
+          <div className="relative flex items-center pr-0 sm:static sm:inset-auto sm:ml-6 sm:pr-0 justtify-center px-1 ">
             <div>
               <DarkModeToggle />
             </div>
             <button
               type="button"
-              className="relative rounded-full pl-5 text-red-700 dark:text-white hover:translate-y-2 duration-600"
+              className="relative rounded-full pl-5 text-red-700 dark:text-white hover:translate-y-2 duration-600 hidden md:block"
             >
               <span className="absolute -inset-1.5" />
               <span className="sr-only">View notifications</span>
