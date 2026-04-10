@@ -35,7 +35,9 @@ export default function Navbar() {
 
             {/* company name */}
             <div className="flex shrink-0 items-center">
-              <a href="/" className='text-red-700 font-bold md:text-2xl hover:translate-x-2 duration-600 dark:text-white'>Clothing Lab</a>
+              <span className="text-white font-black text-3xl tracking-tight leading-none">
+                CLOTHING <span className="text-red-500">LAB</span>
+              </span>
             </div>
 
 
@@ -47,7 +49,7 @@ export default function Navbar() {
                     href={item.href}
                     aria-current={item.current ? 'page' : undefined}
                     className={classNames(
-                      item.current ? 'bg-gray-950/50 text-white' : 'dark:text-white text-red-700 text-bold hover:bg-white/5 hover:translate-x-2 duration-600',
+                      item.current ? 'bg-gray-950/50 text-white' : 'dark:text-[#9FCB98] text-red-700 text-bold hover:bg-white/5 hover:translate-x-2 duration-600',
                       'rounded-md px-3 py-2 font-medium',
                     )}
                   >
@@ -75,9 +77,9 @@ export default function Navbar() {
 
             {/* Profile dropdown */}
             <Menu as="div" className="relative ml-3">
-             
 
-              
+
+
             </Menu>
           </div>
         </div>

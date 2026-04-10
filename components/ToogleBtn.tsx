@@ -9,7 +9,7 @@ export default function ToogleBtn() {
       <Switch
         checked={enabled}
         onChange={setEnabled}
-        className={`${enabled ? 'bg-lime-700' : 'bg-red-700'}
+        className={`${enabled ? 'bg-red-700' : 'bg-lime-700'}
           relative inline-flex h-[20px] w-[60px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-700 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75`}
       >
         <span className="sr-only">Use setting</span>

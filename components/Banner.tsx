@@ -16,7 +16,8 @@ export default function Banner() {
                     </span>
                 ))}
             </h1>
-            <p>Check out our latest collection <span>!</span></p>
+            <a href="/products">
+            <p className="underline">Check out our latest collection <span>!</span></p></a>
         </div>
     )
 }
