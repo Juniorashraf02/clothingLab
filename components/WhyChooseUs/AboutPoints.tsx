@@ -37,16 +37,16 @@ export default function AboutPoints() {
   }, []);
 
   return (
-    <ul ref={ref} className="space-y-4 max-w-xl px-1">
+    <ul ref={ref} className="space-y-4 max-w-xl px-1 ">
       {points.map((point, i) => (
         <li
           key={i}
-          className={`flex items-start gap-3 transition-all duration-500 ease-out ${
+          className={`flex items-start gap-3 transition-all duration-500 ease-out  ${
             visible[i] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <span className="text-white mt-1 text-sm animate-bounce hover:animate-none">{point.icon}</span>
-          <span className="text-lg text-white animate-bounce hover:animate-none">{point.text}</span>
+          <span className="dark:text-white text-red-800 mt-1 text-sm animate-bounce hover:animate-none">{point.icon}</span>
+          <span className="text-lg dark:text-white text-red-800 animate-bounce hover:animate-none">{point.text}</span>
         </li>
       ))}
     </ul>

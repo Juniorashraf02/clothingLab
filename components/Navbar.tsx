@@ -35,7 +35,7 @@ export default function Navbar() {
 
             {/* company name starts*/}
             <div className="flex shrink-0 items-center">
-              <span className="text-white font-black md:text-3xl tracking-tight leading-none">
+              <span className="dark:text-white text-lime-600 font-black md:text-3xl tracking-tight leading-none">
                 CLOTHING <span className="text-red-500">LAB</span>
               </span>
             </div>
