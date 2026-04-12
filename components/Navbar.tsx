@@ -34,9 +34,9 @@ export default function Navbar() {
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
 
             {/* company name starts*/}
-            <div className="flex shrink-0 items-center">
+            <div className="flex shrink-0 items-center pointer-events-none">
               <span className="dark:text-white text-lime-600 font-black md:text-3xl tracking-tight leading-none">
-                CLOTHING <span className="text-red-500">LAB</span>
+                CLOTHING <span className="text-red-700">LAB</span>
               </span>
             </div>
             {/* company name ends */}
@@ -51,7 +51,7 @@ export default function Navbar() {
                     href={item.href}
                     aria-current={item.current ? 'page' : undefined}
                     className={classNames(
-                      item.current ? 'bg-gray-950/50 text-white' : 'dark:text-[#9FCB98] text-red-700 text-bold hover:bg-white/5 hover:translate-x-2',
+                      item.current ? 'bg-gray-950/50 text-white' : 'dark:text-[#9FCB98] text-red-700 text-bold hover:bg-white/5 hover:translate-x-2  duration-600',
                       'rounded-md px-3 py-2 font-medium',
                     )}
                   >
