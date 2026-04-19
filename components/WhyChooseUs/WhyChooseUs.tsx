@@ -7,8 +7,8 @@ export default function WhyChooseUs() {
         Our Promise
       </p>
       <h2
-        style={{ fontFamily: "'Cormorant Garamond', serif" }}
-        className="text-5xl md:text-6xl font-bold text-[#1A0A00] dark:text-[#F7F3EE] mb-4 text-center"
+        style={{ fontFamily: "" }}
+        className="text-5xl md:text-6xl font-bold text-[#1A0A00] dark:text-[#F7F3EE] mb-4 text-center hover:text-red-700 duration-700 dark:hover-text-lime-700"
       >
         Why Choose Us?
       </h2>

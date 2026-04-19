@@ -32,9 +32,9 @@ export default function InfoSection() {
         {/* Stat cards */}
         <div className="flex flex-col sm:flex-row md:flex-col gap-3 flex-shrink-0">
           {[
-            { num: "500+", label: "Products" },
-            { num: "4.9★", label: "Rating" },
-            { num: "100%", label: "Authentic" },
+            { num: "Lots of", label: "Products" },
+            { num: "Good", label: "Rating" },
+            { num: "Quality", label: "Top Tier level" },
           ].map((s) => (
             <div
               key={s.label}
