@@ -72,57 +72,42 @@ const socials = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-neutral-950  text-neutral-100 overflow-x-hidden">
-
-      {/* NAV
-      <nav className="sticky top-0 z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-900 px-6 py-4 flex items-center justify-between">
-        <span className="font-serif text-xl tracking-wide">
-          Clothing<span className="text-amber-400">Lab</span>
-        </span>
-        <span className="text-xs tracking-widest uppercase text-amber-400 border border-amber-400/30 px-3 py-1 rounded-full">
-          About Us
-        </span>
-      </nav> */}
-
+    <main className="min-h-screen bg-[#F7F3EE] text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 overflow-x-hidden">
       {/* HERO */}
       <section className="relative overflow-hidden max-w-5xl mx-auto px-6 pt-24 pb-20 flex flex-col gap-6">
-        <div className="absolute -top-32 -right-24 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 -left-16 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute w-max-screen h-96 bg-amber-300 dark:bg-amber-400 rounded-full blur-3xl pointer-events-none " />
+        <div className="absolute bottom-0 bg-blue-300/10 dark:bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
-        <span className="self-start text-xs tracking-widest uppercase text-amber-400 border border-amber-400/30 px-3 py-1 rounded-full">
+        <span className="self-start text-xs tracking-widest uppercase text-amber-600 dark:text-amber-400 border border-amber-600/30 dark:border-amber-400/30 px-3 py-1 rounded-full">
           Est. 2026
         </span>
 
-        <h1 className="font-serif text-5xl md:text-7xl font-bold leading-tight max-w-2xl">
+        <h1 className="font-serif text-5xl md:text-7xl font-bold leading-tight max-w-2xl text-neutral-800 dark:text-neutral-100">
           Where Innovation{" "}
-          <em className="text-amber-400">Meets Fashion</em>
+          <em className="text-amber-600 dark:text-amber-400">Meets Fashion</em>
         </h1>
 
-        <div className="w-12 h-0.5 bg-amber-400" />
+        <div className="w-12 h-0.5 bg-amber-600 dark:bg-amber-400" />
 
-        <p className="text-neutral-400 text-lg leading-relaxed max-w-xl">
+        <p className="text-neutral-700 dark:text-neutral-400 text-lg leading-relaxed max-w-xl">
           Clothing Lab is an online fashion destination built on bold ideas,
           sustainable choices, and clothing that moves with you — from everyday
           essentials to statement pieces.
         </p>
       </section>
 
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-neutral-700/50 to-transparent" />
-      </div>
-
       {/* MISSION */}
       <section className="max-w-5xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="flex flex-col gap-5">
-            <span className="self-start text-xs tracking-widest uppercase text-amber-400 border border-amber-400/30 px-3 py-1 rounded-full">
+            <span className="self-start text-xs tracking-widest uppercase text-amber-600 dark:text-amber-400 border border-amber-600/30 dark:border-amber-400/30 px-3 py-1 rounded-full">
               Our Mission
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold leading-snug">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold leading-snug text-neutral-800 dark:text-neutral-100">
               Clothing that inspires,<br />made responsibly.
             </h2>
-            <div className="w-12 h-0.5 bg-amber-400" />
-            <p className="text-neutral-400 text-base leading-relaxed">
+            <div className="w-12 h-0.5 bg-amber-600 dark:bg-amber-400" />
+            <p className="text-neutral-700 dark:text-neutral-400 text-base leading-relaxed">
               We believe great fashion shouldn't cost the earth. Our mission is
               to bring you high-quality, eco-friendly clothing that inspires
               confidence, celebrates creativity, and moves the industry forward —
@@ -134,9 +119,9 @@ export default function AboutPage() {
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="bg-neutral-900 border border-neutral-800 rounded-sm p-6 flex flex-col gap-1 hover:border-amber-400/30 transition-colors duration-300"
+                className="bg-[#FAF9F7] dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 rounded-sm p-6 flex flex-col gap-1 hover:border-amber-600/30 dark:hover:border-amber-400/30 transition-colors duration-300"
               >
-                <span className="font-serif text-3xl font-bold text-amber-400">{s.num}</span>
+                <span className="font-serif text-3xl font-bold text-amber-600 dark:text-amber-400">{s.num}</span>
                 <span className="text-xs uppercase tracking-widest text-neutral-500">{s.label}</span>
               </div>
             ))}
@@ -144,60 +129,52 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-neutral-700/50 to-transparent" />
-      </div>
-
       {/* SERVICES */}
       <section className="max-w-5xl mx-auto px-6 py-20">
         <div className="flex flex-col gap-3 mb-12">
-          <span className="self-start text-xs tracking-widest uppercase text-amber-400 border border-amber-400/30 px-3 py-1 rounded-full">
+          <span className="self-start text-xs tracking-widest uppercase text-amber-600 dark:text-amber-400 border border-amber-600/30 dark:border-amber-400/30 px-3 py-1 rounded-full">
             What We Do
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold">Our Services</h2>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-100">Our Services</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {services.map((s) => (
             <div
               key={s.title}
-              className="bg-neutral-900 border border-neutral-800 rounded-sm p-6 flex flex-col gap-3 hover:border-amber-400/30 hover:-translate-y-1 transition-all duration-300"
+              className="bg-[#FAF9F7] dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 rounded-sm p-6 flex flex-col gap-3 hover:border-amber-600/30 dark:hover:border-amber-400/30 hover:-translate-y-1 transition-all duration-300"
             >
-              <span className="text-amber-400 text-2xl">{s.icon}</span>
-              <h3 className="text-base font-medium">{s.title}</h3>
-              <p className="text-sm text-neutral-500 leading-relaxed">{s.desc}</p>
+              <span className="text-amber-600 dark:text-amber-400 text-2xl">{s.icon}</span>
+              <h3 className="text-base font-medium text-neutral-800 dark:text-neutral-100">{s.title}</h3>
+              <p className="text-sm text-neutral-600 dark:text-neutral-500 leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-neutral-700/50 to-transparent" />
-      </div>
-
       {/* CONTACT */}
       <section className="max-w-5xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           <div className="flex flex-col gap-5">
-            <span className="self-start text-xs tracking-widest uppercase text-amber-400 border border-amber-400/30 px-3 py-1 rounded-full">
+            <span className="self-start text-xs tracking-widest uppercase text-amber-600 dark:text-amber-400 border border-amber-600/30 dark:border-amber-400/30 px-3 py-1 rounded-full">
               Get In Touch
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold">Let's talk fashion.</h2>
-            <div className="w-12 h-0.5 bg-amber-400" />
-            <p className="text-neutral-400 text-base leading-relaxed">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-100">Let's talk fashion.</h2>
+            <div className="w-12 h-0.5 bg-amber-600 dark:bg-amber-400" />
+            <p className="text-neutral-700 dark:text-neutral-400 text-base leading-relaxed">
               Have a question, a collab idea, or just want to say hello?
               Reach out — we'd love to hear from you.
             </p>
             <a
               href="mailto: zynogad@gmail.com"
-              className="self-start text-amber-400 border-b border-amber-400/30 hover:border-amber-400 pb-0.5 transition-colors duration-200 text-base"
+              className="self-start text-amber-600 dark:text-amber-400 border-b border-amber-600/30 dark:border-amber-400/30 hover:border-amber-600 dark:hover:border-amber-400 pb-0.5 transition-colors duration-200 text-base"
             >
               zynogad@gmail.com
             </a>
           </div>
 
           <div className="flex flex-col gap-3">
-            <p className="text-xs uppercase tracking-widest text-neutral-600 mb-2">
+            <p className="text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-600 mb-2">
               Find us online
             </p>
             {socials.map((s) => (
@@ -206,7 +183,7 @@ export default function AboutPage() {
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 px-5 py-3 border border-neutral-800 rounded-sm text-sm text-neutral-300 hover:border-amber-400/50 hover:text-amber-400 hover:bg-amber-400/5 transition-all duration-300"
+                className="flex items-center gap-3 px-5 py-3 border border-neutral-300 dark:border-neutral-800 rounded-sm text-sm text-neutral-700 dark:text-neutral-300 hover:border-amber-600/50 dark:hover:border-amber-400/50 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-amber-600/5 dark:hover:bg-amber-400/5 transition-all duration-300"
               >
                 {s.icon}
                 <span>{s.name}</span>
@@ -217,9 +194,10 @@ export default function AboutPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-neutral-900 py-8 text-center text-neutral-700 text-sm">
+      <footer className="border-t border-neutral-300 dark:border-neutral-900 py-8 text-center text-neutral-600 dark:text-neutral-700 text-sm">
         © {new Date().getFullYear()} Clothing Lab. All rights reserved.
       </footer>
     </main>
+
   );
 }
