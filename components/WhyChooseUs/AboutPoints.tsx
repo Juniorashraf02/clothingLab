@@ -3,16 +3,38 @@
 import { useEffect, useRef, useState } from "react";
 
 const points = [
-  { icon: "✦", text: "Amazing quality clothing that's stylish & affordable" },
-  { icon: "✦", text: "Express delivery options" },
-  { icon: "✦", text: "Cash on delivery after product receiving" },
-  { icon: "✦", text: "Excellent customer support, always" },
-  { icon: "✦", text: "Even you can advice us to source a product for you!" },
+  {
+    icon: "✦",
+    title: "Premium Quality",
+    text: "Amazing quality clothing that's stylish & affordable",
+  },
+  {
+    icon: "◈",
+    title: "Express Delivery",
+    text: "Fast delivery options available across Bangladesh",
+  },
+  {
+    icon: "◉",
+    title: "Cash on Delivery",
+    text: "Pay only after you receive and inspect your product",
+  },
+  {
+    icon: "✧",
+    title: "24/7 Support",
+    text: "Excellent customer support, always here for you",
+  },
+  {
+    icon: "⊹",
+    title: "Custom Sourcing",
+    text: "We can source any specific product you advise us on",
+  },
 ];
 
 export default function AboutPoints() {
-  const [visible, setVisible] = useState<boolean[]>(Array(points.length).fill(false));
-  const ref = useRef<HTMLUListElement>(null);
+  const [visible, setVisible] = useState<boolean[]>(
+    Array(points.length).fill(false)
+  );
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,30 +47,40 @@ export default function AboutPoints() {
                 next[i] = true;
                 return next;
               });
-            }, i * 1000);
+            }, i * 140);
           });
           observer.disconnect();
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <ul ref={ref} className="space-y-4 max-w-xl px-1 ">
+    <div
+      ref={ref}
+      className="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
+    >
       {points.map((point, i) => (
-        <li
+        <div
           key={i}
-          className={`flex items-start gap-3 transition-all duration-500 ease-out  ${
-            visible[i] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          className={`bg-white dark:bg-[#1E1B18] border border-[#F0D6C8] dark:border-[#2E2A26] border-l-4 border-l-[#F5C518] dark:border-l-[#B8955A] p-7 flex flex-col gap-3 transition-all duration-500 ease-out hover:border-l-[#C0392B] dark:hover:border-l-[#C4A882] hover:shadow-sm ${
+            visible[i] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <span className="dark:text-white text-red-800 mt-1 text-sm animate-bounce hover:animate-none">{point.icon}</span>
-          <span className="text-lg dark:text-white text-red-800 animate-bounce hover:animate-none">{point.text}</span>
-        </li>
+          <span className="text-[#C0392B] dark:text-[#B8955A] text-lg">{point.icon}</span>
+          <div>
+            <p className="text-sm font-semibold text-[#1A0A00] dark:text-[#F7F3EE] mb-1">
+              {point.title}
+            </p>
+            <p className="text-sm text-[#7A5C50] dark:text-[#9A918A] leading-relaxed">
+              {point.text}
+            </p>
+          </div>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }

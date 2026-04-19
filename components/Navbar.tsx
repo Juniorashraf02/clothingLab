@@ -1,108 +1,91 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import DarkModeToggle from './DarkModeToggle'
 
-
 const navigation = [
-  { name: 'Home', href: '/', current: false },
-  { name: 'Products', href: '/products', current: false },
-  { name: 'About us', href: '/about', current: false },
+  { name: 'Home', href: '/' },
+  { name: 'Products', href: '/products' },
+  { name: 'About Us', href: '/about' },
 ]
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-
 export default function Navbar() {
   return (
     <Disclosure
       as="nav"
-      className="relative dark:bg-gray-800 bg-white font-bold bg-white border-b border-gray-200"
+      className="sticky top-0 z-50 bg-white dark:bg-[#111010] border-b-2 border-[#F5C518] dark:border-[#2E2A26]"
     >
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
-              <span className="absolute -inset-0.5" />
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon aria-hidden="true" className="block size-6 group-data-open:hidden" />
-              <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-open:block" />
-            </DisclosureButton>
-          </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
 
-            {/* company name starts*/}
-            <div className="flex shrink-0 items-center pointer-events-none">
-              <span className="dark:text-white text-lime-600 font-black md:text-3xl tracking-tight leading-none">
-                CLOTHING <span className="text-red-700">LAB</span>
-              </span>
-            </div>
-            {/* company name ends */}
-
-
-
-            <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-4">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    aria-current={item.current ? 'page' : undefined}
-                    className={classNames(
-                      item.current ? 'bg-gray-950/50 text-white' : 'dark:text-[#9FCB98] text-red-700 text-bold hover:bg-white/5 hover:translate-x-2  duration-600',
-                      'rounded-md px-3 py-2 font-medium',
-                    )}
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-
-
-
-          <div className="relative flex items-center pr-0 sm:static sm:inset-auto sm:ml-6 sm:pr-0 justtify-center px-1 ">
-            <div>
-              <DarkModeToggle />
-            </div>
-            <button
-              type="button"
-              className="relative rounded-full pl-5 text-red-700 dark:text-white hover:translate-y-2 duration-600 hidden md:block"
+          {/* Logo */}
+          <a href="/" className="flex shrink-0 items-center">
+            <span
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              className="font-black text-2xl tracking-tight leading-none text-[#1A0A00] dark:text-[#F7F3EE]"
             >
-              <span className="absolute -inset-1.5" />
-              <span className="sr-only">View notifications</span>
-              <BellIcon aria-hidden="true" className="size-6" />
-            </button>
+              CLOTHING{' '}
+              <span className="text-[#C0392B] dark:text-[#B8955A]">LAB</span>
+            </span>
+          </a>
 
-            {/* Profile dropdown */}
-            <Menu as="div" className="relative ml-3">
+          {/* Desktop nav */}
+          <div className="hidden sm:flex sm:items-center sm:gap-8">
+            {navigation.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-xs font-medium uppercase tracking-[0.12em] text-[#7A5C50] dark:text-[#9A918A] hover:text-[#C0392B] dark:hover:text-[#F7F3EE] transition-colors duration-200 pb-0.5 border-b-2 border-transparent hover:border-[#F5C518] dark:hover:border-[#B8955A]"
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
 
+          {/* Right */}
+          <div className="flex items-center gap-4">
+            <DarkModeToggle />
+            <a
+              href="/products"
+              className="hidden sm:inline-flex items-center px-5 py-2 text-xs font-semibold uppercase tracking-[0.1em] bg-[#C0392B] dark:bg-transparent text-white dark:text-[#B8955A] border border-[#C0392B] dark:border-[#B8955A] hover:bg-[#9B1C1C] dark:hover:bg-[#B8955A] dark:hover:text-[#111010] transition-all duration-200"
+            >
+              Shop Now
+            </a>
 
-
-            </Menu>
+            {/* Mobile toggle */}
+            <div className="sm:hidden">
+              <DisclosureButton className="inline-flex items-center justify-center p-2 text-[#7A5C50] dark:text-[#9A918A] hover:text-[#C0392B] dark:hover:text-[#F7F3EE] focus:outline-none transition-colors">
+                <span className="sr-only">Open main menu</span>
+                <Bars3Icon aria-hidden="true" className="block size-5 group-data-open:hidden" />
+                <XMarkIcon aria-hidden="true" className="hidden size-5 group-data-open:block" />
+              </DisclosureButton>
+            </div>
           </div>
         </div>
       </div>
 
-      <DisclosurePanel className="sm:hidden">
-        <div className="space-y-1 px-2 pt-2 pb-3">
+      {/* Mobile menu */}
+      <DisclosurePanel className="sm:hidden border-t-2 border-[#F5C518] dark:border-[#2E2A26]">
+        <div className="px-6 py-5 flex flex-col gap-4 bg-white dark:bg-[#111010]">
           {navigation.map((item) => (
             <DisclosureButton
               key={item.name}
               as="a"
               href={item.href}
-              aria-current={item.current ? 'page' : undefined}
-              className={classNames(
-                item.current ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white',
-                'block rounded-md px-3 py-2 text-base font-medium',
-              )}
+              className="text-sm font-medium uppercase tracking-[0.1em] text-[#7A5C50] dark:text-[#9A918A] hover:text-[#C0392B] dark:hover:text-[#F7F3EE] transition-colors"
             >
               {item.name}
             </DisclosureButton>
           ))}
+          <a
+            href="/products"
+            className="mt-1 self-start px-5 py-2.5 bg-[#C0392B] dark:bg-transparent text-white dark:text-[#B8955A] border border-[#C0392B] dark:border-[#B8955A] text-xs font-semibold uppercase tracking-[0.1em] hover:bg-[#9B1C1C] dark:hover:bg-[#B8955A] dark:hover:text-[#111010] transition-all duration-200"
+          >
+            Shop Now
+          </a>
         </div>
       </DisclosurePanel>
     </Disclosure>
