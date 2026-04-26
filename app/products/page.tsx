@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { use } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "Products | Clothing Lab",
@@ -12,30 +13,30 @@ export const metadata: Metadata = {
 const products = [
     {
         id: 1,
-        name: "Eco Linen Shirt",
-        price: "$89",
-        image: "/images/products/linen-shirt.jpg",
+        name: "Linen Shirt",
+        price: "Taka 500",
+        image: "/images/IMAGE01.jpg",
         desc: "Breathable, lightweight linen made from eco-friendly fibers.",
     },
     {
         id: 2,
-        name: "Tailored Blazer",
-        price: "$149",
-        image: "/images/products/blazer.jpg",
+        name: "Tailored shirt",
+        price: "Taka 1490",
+        image: "/images/IMAGE02.jpg",
         desc: "Sharp, versatile blazer crafted for modern silhouettes.",
     },
     {
         id: 3,
         name: "Organic Cotton Tee",
-        price: "$39",
-        image: "/images/products/cotton-tee.jpg",
+        price: "Taka 390",
+        image: "/images/IMAGE03.jpg",
         desc: "Soft, durable cotton tee designed for everyday wear.",
     },
     {
         id: 4,
         name: "Sustainable Denim",
-        price: "$129",
-        image: "/images/products/denim.jpg",
+        price: "Taka 1290",
+        image: "/images/denim.jpg",
         desc: "Classic denim reimagined with eco-conscious production.",
     },
 ];
@@ -60,7 +61,14 @@ export default function ProductPage() {
                     {products.map((p) => (
                         <Link key={p.id} href={`/products/${p.id}`} className="group">
                             <div className="bg-[#FAF9F7] dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 rounded-md overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                                <img src={p.image} alt={p.name} className="w-full h-64 object-cover group-hover:opacity-90" />
+                        
+                                <Image
+                                    src={p.image}
+                                    alt={p.name}
+                                    width={300}
+                                    height={300}
+                                    className="w-full h-64 object-cover group-hover:opacity-90"
+                                />
                                 <div className="p-6 flex flex-col gap-2">
                                     <h3 className="text-lg font-semibold text-neutral-800 dark:text-neutral-100">{p.name}</h3>
                                     <p className="text-sm text-neutral-600 dark:text-neutral-500">{p.desc}</p>

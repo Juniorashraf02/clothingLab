@@ -1,25 +1,27 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
 
 const products = [
   {
     id: "1",
-    name: "Eco Linen Shirt",
-    price: "$89",
+    name: "Linen Shirt",
+    price: "Taka 500",
     desc: "Breathable, lightweight linen made from eco-friendly fibers.",
-    image: "/images/products/linen-shirt.jpg",
+    image: "/images/IMAGE01.jpg",  // ✅ Fixed
     details: [
       "Made from 100% organic linen",
       "Machine washable, gentle cycle",
-      "Available in sizes S–XL",
+      "Available in sizes S-XL",
     ],
-    video: "https://www.youtube.com/embed/ScMzIvxBSiQ", // sample YouTube link
+    video: "https://www.youtube.com/embed/ScMzIvxBSiQ",
   },
   {
     id: "2",
-    name: "Tailored Blazer",
-    price: "$149",
+    name: "Tailored shirt",
+    price: "Taka 1490",
     desc: "Sharp, versatile blazer crafted for modern silhouettes.",
-    image: "/images/products/blazer.jpg",
+    image: "/images/IMAGE02.jpg",  // ✅ Fixed
     details: [
       "Premium wool blend",
       "Slim fit with modern cut",
@@ -39,7 +41,15 @@ export default async function ProductDetail({ params }: { params: Promise<{ id: 
     <main className="min-h-screen bg-[#F7F3EE] text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 px-6 py-24">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
         {/* Product Image */}
-        <img src={product.image} alt={product.name} className="w-full h-auto rounded-md shadow-md" />
+        {/* <img src={product.image} alt={product.name} className="w-full h-auto rounded-md shadow-md" /> */}
+
+        <Image
+          src={product.image}
+          alt={product.name}
+          width={600}
+          height={600}
+          className="w-full h-auto rounded-md shadow-md"
+        />
 
         {/* Product Info */}
         <div className="flex flex-col gap-6">
@@ -56,7 +66,9 @@ export default async function ProductDetail({ params }: { params: Promise<{ id: 
 
           {/* Add to Cart */}
           <button className="mt-4 px-6 py-3 bg-amber-600 dark:bg-amber-400 text-white dark:text-neutral-900 rounded-sm hover:bg-amber-700 dark:hover:bg-amber-300 transition-colors duration-200">
-            Add to Cart
+            <Link  href="https://wa.me/+8801401260160" target="_blank" rel="noopener noreferrer">
+              Order now
+            </Link>
           </button>
         </div>
       </div>
