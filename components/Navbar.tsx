@@ -27,8 +27,8 @@ export default function Navbar() {
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
               className="font-black text-2xl tracking-tight leading-none text-[#1A0A00] dark:text-[#F7F3EE]"
             >
-              CLOTHING{' '}
-              <span className="text-[#C0392B] dark:text-[#B8955A]">LAB</span>
+              ZYNOGAD{' '}
+              <span className="text-[#C0392B] dark:text-[#B8955A]"></span>
             </span>
           </a>
 

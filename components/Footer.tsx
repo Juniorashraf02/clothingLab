@@ -53,8 +53,8 @@ export default function Footer() {
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
               className="text-white font-black text-2xl tracking-tight leading-none"
             >
-              CLOTHING{' '}
-              <span className="text-[#F5C518] dark:text-[#B8955A]">LAB</span>
+              ZYNOGAD{' '}
+              <span className="text-[#F5C518] dark:text-[#B8955A]"></span>
             </span>
             <p className="text-sm text-white/60 dark:text-white/40 leading-relaxed">
               Premium products, affordable prices — crafted for Bangladesh.
